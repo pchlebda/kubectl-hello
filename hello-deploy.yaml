@@ -2,18 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: hello
-  name: hello
+    app: demo
+  name: demo
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: hello
+      app: demo
   strategy: {}
   template:
     metadata:
       labels:
-        app: hello
+        app: demo
     spec:
       containers:
         - image: kubectl/hello:1.0.0
@@ -24,8 +24,8 @@ spec:
   kind: Service
   metadata:
     labels:
-      app: hello
-    name: hello
+      app: demo
+    name: demo
     spec:
       ports:
         - name: 8080-8080
@@ -33,7 +33,7 @@ spec:
           protocol: TCP
           targetPort: 8080
       selector:
-        app: hello
+        app: demo
       type: ClusterIP
     status:
       loadBalancer: { }
