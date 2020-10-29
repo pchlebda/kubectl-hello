@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        app: knote
+        app: hello
     spec:
       containers:
         - name: app
